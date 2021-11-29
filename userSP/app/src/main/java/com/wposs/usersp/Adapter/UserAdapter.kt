@@ -5,11 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.wposs.usersp.R
 import com.wposs.usersp.VO.User
 import com.wposs.usersp.databinding.ItemUserBinding
 
-class UserAdapter(private val users:List<User>) : RecyclerView.Adapter<UserAdapter.ViewHolder>(){
+class UserAdapter(private val users: List<User>) : RecyclerView.Adapter<UserAdapter.ViewHolder>() {
 
     private lateinit var context: Context
 
@@ -24,16 +26,21 @@ class UserAdapter(private val users:List<User>) : RecyclerView.Adapter<UserAdapt
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val user = users.get(position)
 
-        with(holder){
-            binding.tvOrder.text = user.id.toString()
+        with(holder) {
+            binding.tvOrder.text = (position + 1).toString()
             binding.tvName.text = user.name
+            Glide.with(context)
+                .load(user.url)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .centerCrop()
+                .circleCrop()
+                .into(binding.imagePhoto)
         }
     }
 
-
     override fun getItemCount(): Int = users.size
 
-    inner class ViewHolder(view: View):RecyclerView.ViewHolder(view){
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val binding = ItemUserBinding.bind(view)
     }
 
