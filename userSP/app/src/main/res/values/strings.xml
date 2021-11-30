@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">userSP</string>
     <string name="description_user_photo">imagen del usuario</string>
+    <string name="sp_firs_time">firs_time</string>
+    <string name="dialo_title">Registro de usuario</string>
+    <string name="dialo_confirm">Registrar</string>
+    <string name="cancel">Cancelar</string>
 </resources>

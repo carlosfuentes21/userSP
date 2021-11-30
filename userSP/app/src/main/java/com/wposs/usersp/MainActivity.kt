@@ -1,10 +1,14 @@
 package com.wposs.usersp
 
+import android.content.Context
+import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.wposs.usersp.Adapter.UserAdapter
 import com.wposs.usersp.VO.User
 import com.wposs.usersp.databinding.ActivityMainBinding
@@ -21,6 +25,20 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         //setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        
+        val preferences = getPreferences(MODE_PRIVATE)
+        val isFirsTime = preferences.getBoolean(getString(R.string.sp_firs_time), true)
+        Log.i("SP", "${getString(R.string.sp_firs_time)} = $isFirsTime")
+
+        if (isFirsTime){
+            MaterialAlertDialogBuilder(this)
+                .setTitle(R.string.dialo_title)
+                .setPositiveButton(R.string.dialo_confirm, DialogInterface.OnClickListener { dialogInterface, i ->
+                    preferences.edit().putBoolean(getString(R.string.sp_firs_time), false).commit()
+                })
+                .setNegativeButton(R.string.cancel, null)
+                .show()
+        }
 
         userAdapter = UserAdapter(getUsers(), this)
         linearLayoutManager = LinearLayoutManager(this)
