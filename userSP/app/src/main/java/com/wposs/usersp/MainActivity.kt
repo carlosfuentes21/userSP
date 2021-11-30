@@ -32,10 +32,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun getUsers():MutableList<User>{
         val users = mutableListOf<User>()
-        val carlos = User(1, "carlos", "andres", "https://www.welivesecurity.com/wp-content/uploads/es-la/2012/12/Logo-Android.png")
-        val jhoan = User(1, "jhoan", "moncada", "https://www.welivesecurity.com/wp-content/uploads/es-la/2012/12/Logo-Android.png")
-        val enyer = User(1, "enyerson", "camero", "https://www.welivesecurity.com/wp-content/uploads/es-la/2012/12/Logo-Android.png")
-        val nataly = User(1, "nataly", "suarez", "https://www.welivesecurity.com/wp-content/uploads/es-la/2012/12/Logo-Android.png")
+        val carlos = User(1, "carlos", "andres", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkehoUmQa3KeI77BkbYpfQMeDgh_vJzi89pfEo2eMtJoaq_6xs7DxcUPTKPDM-XDlWUe4&usqp=CAU")
+        val jhoan = User(1, "jhoan", "moncada", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkehoUmQa3KeI77BkbYpfQMeDgh_vJzi89pfEo2eMtJoaq_6xs7DxcUPTKPDM-XDlWUe4&usqp=CAU")
+        val enyer = User(1, "enyerson", "camero", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkehoUmQa3KeI77BkbYpfQMeDgh_vJzi89pfEo2eMtJoaq_6xs7DxcUPTKPDM-XDlWUe4&usqp=CAU")
+        val nataly = User(1, "nataly", "suarez", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkehoUmQa3KeI77BkbYpfQMeDgh_vJzi89pfEo2eMtJoaq_6xs7DxcUPTKPDM-XDlWUe4&usqp=CAU")
 
         users.add(carlos)
         users.add(jhoan)
