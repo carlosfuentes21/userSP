@@ -5,4 +5,8 @@
     <string name="dialo_title">Registro de usuario</string>
     <string name="dialo_confirm">Registrar</string>
     <string name="cancel">Cancelar</string>
+    <string name="helper_username">Obligatorio</string>
+    <string name="hind_username">Nombre de usuario</string>
+    <string name="sp_username">username</string>
+    <string name="registre_success">Registro exitoso</string>
 </resources>

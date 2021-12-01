@@ -10,16 +10,18 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.wposs.usersp.OnClickListener
 import com.wposs.usersp.R
 import com.wposs.usersp.VO.User
+import com.wposs.usersp.databinding.ItemUserAltBinding
 import com.wposs.usersp.databinding.ItemUserBinding
 
-class UserAdapter(private val users: List<User>, private val listener:OnClickListener) : RecyclerView.Adapter<UserAdapter.ViewHolder>() {
+class UserAdapter(private val users: List<User>, private val listener: OnClickListener) :
+    RecyclerView.Adapter<UserAdapter.ViewHolder>() {
 
     private lateinit var context: Context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         context = parent.context
 
-        val view = LayoutInflater.from(context).inflate(R.layout.item_user, parent, false)
+        val view = LayoutInflater.from(context).inflate(R.layout.item_user_alt, parent, false)
         return ViewHolder(view)
     }
 
@@ -28,7 +30,7 @@ class UserAdapter(private val users: List<User>, private val listener:OnClickLis
         val user = users.get(position)
 
         with(holder) {
-            setListener(user, position+1)
+            setListener(user, position + 1)
             binding.tvOrder.text = (position + 1).toString()
             binding.tvName.text = user.getFullName()
             Glide.with(context)
@@ -43,9 +45,9 @@ class UserAdapter(private val users: List<User>, private val listener:OnClickLis
     override fun getItemCount(): Int = users.size
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val binding = ItemUserBinding.bind(view)
+        val binding = ItemUserAltBinding.bind(view)
 
-        fun setListener(user:User, position: Int){
+        fun setListener(user: User, position: Int) {
             binding.root.setOnClickListener { listener.onClick(user, position) }
         }
     }
