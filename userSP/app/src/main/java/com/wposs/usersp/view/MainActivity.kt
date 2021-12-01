@@ -1,6 +1,5 @@
-package com.wposs.usersp
+package com.wposs.usersp.view
 
-import android.content.Context
 import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputEditText
 import com.wposs.usersp.Adapter.UserAdapter
+import com.wposs.usersp.OnClickListener
+import com.wposs.usersp.R
 import com.wposs.usersp.VO.User
 import com.wposs.usersp.databinding.ActivityMainBinding
 
